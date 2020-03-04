@@ -35,9 +35,19 @@ p2.start(duty_cycle)# starting duty cycle ( it set the servo to 0 degree )
 try:
        while True:
 
-            duty_cycle = float(input("Enter Duty Cycle (Left = 5 to Right = 10):"))
-            p.ChangeDutyCycle(duty_cycle)
-#            p2.ChangeDutyCycle(duty_cycle)
+#            duty_cycle = float(input("Enter Duty Cycle (Left = 5 to Right = 10):"))
+            p2.ChangeDutyCycle(duty_cycle)
+            p.ChangeDutyCycle(duty_cycle) 
+            p2.ChangeDutyCycle(duty_cycle-3.5)
+            time.sleep(0.5)
+            for x in range(0, 2.5, 0.25):
+                #p.ChangeDutyCycle(duty_cycle-x)
+                #time.sleep(0.1)
+            #p.ChangeDutyCycle(duty_cycle-2.5)
+            time.sleep(1)
+            p.ChangeDutyCycle(duty_cycle-1.75)
+            p2.ChangeDutyCycle(duty_cycle)
+            time.sleep(0.5)
 #           for x in range(11):
 #           for x in range(11):
 #             p.ChangeDutyCycle(control[x])
