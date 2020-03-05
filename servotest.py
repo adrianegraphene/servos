@@ -20,14 +20,14 @@ p=GPIO.PWM(servo1,50)# 50hz frequency
 p2=GPIO.PWM(servo2,50)# 50hz frequency
 
 # Duty Cycle ranges from 3 to 13 for SG90s. DO NOT GO  BEYOND 3 or 13.
-p.start(duty_cycle)# starting duty cycle ( it set the servo to 0 degree )
+p.start(duty_cycle-1.5)# starting duty cycle ( it set the servo to 0 degree )
 p2.start(duty_cycle)# starting duty cycle ( it set the servo to 0 degree )
 
 try:
     while True:
         duty_cycle = float(input("Enter Duty Cycle (Left = 5 to Right = 10):"))
-        p.ChangeDutyCycle(duty_cycle)
-#        p2.ChangeDutyCycle(duty_cycle)
+#        p.ChangeDutyCycle(duty_cycle)
+        p2.ChangeDutyCycle(duty_cycle)
 
 except KeyboardInterrupt:
     print("CTRL-C: Terminating program.")
