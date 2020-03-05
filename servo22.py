@@ -6,8 +6,8 @@ import time
 
 control = [5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10]
 
-servo1 = 22
-servo2 = 18
+servo2 = 22
+servo1 = 18
 
 GPIO.setmode(GPIO.BOARD)
 
