@@ -28,7 +28,7 @@ try:
         #duty_cycle = float(input("Enter Duty Cycle (Left = 5 to Right = 10):"))
         p.ChangeDutyCycle(duty_cycle)
         p2.ChangeDutyCycle(duty_cycle)
-        p.ChangeDutyCycle(duty_cycle-3.5)
+        p.ChangeDutyCycle(duty_cycle-1.5)
         time.sleep(0.5)
     
         #This for loop should create a granular movement effect that reflects a human movement.
@@ -40,44 +40,21 @@ try:
             print("sleeping for 0.25  seconds")
             time.sleep(0.10)
 
- #           print("current y is :")
-#            print(y)
-
-#            print("current x is :")
-  #          print(x)
-
-
         time.sleep(1.00)
         #"Pick up" p2 using p as an arm (giving p2 clearance to hang up)
-        p.ChangeDutyCycle(duty_cycle-2.5)
-        time.sleep(0.25)
+        p.ChangeDutyCycle(duty_cycle+0.5)
+        time.sleep(0.5)
         #Position p2 over the hang up button
         p2.ChangeDutyCycle(duty_cycle-2)
         time.sleep(0.8)
         #here is when p ought to "lower" p2 onto the hangup button
         #Note. using 3.5 as a template here. Need to get actual nubmers down later.
         #"Lower" ps using p as an arm
-        p.ChangeDutyCycle(duty_cycle-3.5)
+        p.ChangeDutyCycle(duty_cycle-2)
         #immediately raise p2 using p as an arm. This should complete the hangup motion
-        p.ChangeDutyCycle(duty_cycle)
+        p.ChangeDutyCycle(duty_cycle+0.5)
         time.sleep(0.25)
-        #bring P2 back to start.
-        p2.ChangeDutyCycle(duty_cycle)
 
-
-# try:
-#        while True:
-#            for x in range(11):
-#              p.ChangeDutyCycle(control[x])
-#              p2.ChangeDutyCycle(control[x])
-#              time.sleep(0.2) 
-#              print x
-
-#            for x in range(9,0,-1):
-#              p.ChangeDutyCycle(control[x])
-#              p2.ChangeDutyCycle(control[x])
-#              time.sleep(0.1)
-#              print x
 
 except KeyboardInterrupt:
     print("CTRL-C: Terminating program.")
