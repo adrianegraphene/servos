@@ -26,8 +26,8 @@ p2.start(duty_cycle)# starting duty cycle ( it set the servo to 0 degree )
 try:
     while True:
         duty_cycle = float(input("Enter Duty Cycle (Left = 5 to Right = 10):"))
-#        p.ChangeDutyCycle(duty_cycle)
-        p2.ChangeDutyCycle(duty_cycle)
+        p.ChangeDutyCycle(duty_cycle)
+#        p2.ChangeDutyCycle(duty_cycle)
 
 except KeyboardInterrupt:
     print("CTRL-C: Terminating program.")

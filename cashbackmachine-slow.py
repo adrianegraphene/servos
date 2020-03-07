@@ -27,31 +27,35 @@ try:
     while True:
         print("Starting from the top")
     
-        duty_cycle_answer = duty_cycle + 2.5
+        duty_cycle_answer = duty_cycle + 3.5
         p2.ChangeDutyCycle(duty_cycle_answer)
         #This for loop should create a granular movement effect that reflects a human movement on drop.
-        for x in range(0, 161, 20):
+        for x in range(0, 181, 20):
             y = float(x) / 100
             p.ChangeDutyCycle(duty_cycle-y)
             print("current duty cycle is :")
             print(duty_cycle-y)
-            time.sleep(0.1)
+            time.sleep(0.06)
 
+        
+        duty_cycle_slide = 5.7
         #This for loop should create a granular movement effect that reflects a human movement on swipe.
-        for x in range(225, 450, 25):
+        for x in range(0, 501, 25):
             y = float(x) / 100
-            p2.ChangeDutyCycle(duty_cycle_answer+y)
+            z = float(x) / 5000
+            p2.ChangeDutyCycle(duty_cycle_answer-y)
+            p.ChangeDutyCycle(duty_cycle_slide-z)
             print("current duty cycle is :")
             print(duty_cycle_answer-y)
-            time.sleep(0.10)
+            time.sleep(0.08)
 
-        time.sleep(1.00)
+        time.sleep(0.20)
         #"Pick up" p2 using p as an arm (giving p2 clearance to hang up)
         p.ChangeDutyCycle(duty_cycle+0.5)
-        time.sleep(0.5)
+        time.sleep(0.25)
         
         #Position p2 over the hang up button
-        p2.ChangeDutyCycle(duty_cycle-2)
+        p2.ChangeDutyCycle(duty_cycle-1.5)
         time.sleep(0.75)
         
         #here is when p ought to "lower" p2 onto the hangup button
@@ -64,7 +68,7 @@ try:
         p.ChangeDutyCycle(duty_cycle+1.5)
         time.sleep(0.1)
         p2.ChangeDutyCycle(duty_cycle)
-        time.sleep(2)
+        time.sleep(1)
 
 
 except KeyboardInterrupt:
