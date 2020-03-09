@@ -33,16 +33,16 @@ try:
         time.sleep(0.1)
 
         #Position stylus over the answer button
-        p2.ChangeDutyCycle(duty_cycle+2.5)
+        p2.ChangeDutyCycle(duty_cycle+3)
         time.sleep(0.75)
         
         #Gently lower vertical arm
-        for x in range(0, 201, 20):
+        for x in range(0, 220, 10):
             y = float(x) / 100
             p.ChangeDutyCycle(duty_cycle-y)
             print("current duty cycle is :")
             print(duty_cycle-y)
-            time.sleep(0.1)
+            time.sleep(0.01)
         time.sleep(0.25)
 
         #Raise vertical arm
@@ -51,16 +51,16 @@ try:
         time.sleep(0.1)
         
         #Position stylus over the hang up button
-        p2.ChangeDutyCycle(duty_cycle-2.2)
+        p2.ChangeDutyCycle(duty_cycle-1)
         time.sleep(0.75)
         
         #Gently lower sylus to answer. 
-        for x in range(0, 221, 20):
+        for x in range(0, 220, 10):
             y = float(x) / 100
             p.ChangeDutyCycle(duty_cycle-y)
             print("current duty cycle is :")
             print(duty_cycle-y)
-            time.sleep(0.1)
+            time.sleep(0.01)
         time.sleep(0.25)
 
 except KeyboardInterrupt:
